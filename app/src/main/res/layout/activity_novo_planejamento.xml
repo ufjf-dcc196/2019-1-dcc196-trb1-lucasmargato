@@ -13,7 +13,7 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/labelNovoTitulo"
+            android:id="@+id/textNovoTitulo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_span="2"
@@ -31,19 +31,20 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/labelNovoAno"
+            android:id="@+id/textNovoAno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="Ano:" />
 
         <EditText
-            android:id="@+id/textNovoAno"
+            android:id="@+id/editNovoAno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
             android:ems="12"
             android:hint="Digite o ano"
+            android:inputType="number"
             android:padding="5dp" />
 
     </TableRow>
@@ -54,7 +55,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/labelNovoSemestre"
+            android:id="@+id/textNovoSemestre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -62,11 +63,12 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/textNovoSemestre"
+            android:id="@+id/editNovoSemestre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:ems="12"
+            android:inputType="number"
             android:hint="Digite o semestre" />
 
     </TableRow>
@@ -76,7 +78,7 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/labelNovoLinguas"
+            android:id="@+id/textNovoLinguas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center"
@@ -84,11 +86,12 @@
             android:text="Línguas:" />
 
         <EditText
-            android:id="@+id/textNovoLinguas"
+            android:id="@+id/editNovoLinguas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
             android:ems="12"
+            android:inputType="number"
             android:hint="Digite o percentual desejado"
             android:padding="5dp" />
 
@@ -100,7 +103,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/labelNovoExatas"
+            android:id="@+id/textNovoExatas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -108,11 +111,12 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/textNovoExatas"
+            android:id="@+id/editNovoExatas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:ems="12"
+            android:inputType="number"
             android:hint="Digite o percentual desejado" />
 
     </TableRow>
@@ -123,7 +127,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/labelNovoSaude"
+            android:id="@+id/textNovoSaude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -131,11 +135,12 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/textNovoSaude"
+            android:id="@+id/editNovoSaude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:ems="12"
+            android:inputType="number"
             android:hint="Digite o percentual desejado" />
 
     </TableRow>
@@ -146,7 +151,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/labelNovoHumanidades"
+            android:id="@+id/textNovoHumanidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -154,12 +159,28 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/textNovoHumanidades"
+            android:id="@+id/editNovoHumanidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:ems="12"
+            android:inputType="number"
             android:hint="Digite o percentual desejado" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/buttonNovoConfirma"
+            android:text="Confirmar"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </TableRow>
 

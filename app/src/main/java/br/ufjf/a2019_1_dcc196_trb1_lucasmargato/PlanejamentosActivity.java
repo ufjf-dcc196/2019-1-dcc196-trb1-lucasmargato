@@ -1,7 +1,9 @@
 package br.ufjf.a2019_1_dcc196_trb1_lucasmargato;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlanejamentosActivity extends AppCompatActivity {
+
+    public static final int NOVO_PLANEJAMENTO = 1;
+    PlanejamentoAdapter adapter;
 
     public List<Planejamento> plans = new ArrayList<Planejamento>(){{
         add(new Planejamento(2018, 1, 25, 25, 25, 25));
@@ -28,7 +33,7 @@ public class PlanejamentosActivity extends AppCompatActivity {
         Button btnNovo = findViewById(R.id.buttonNovo);
 
 
-        PlanejamentoAdapter adapter = new PlanejamentoAdapter(this.plans);
+        adapter  = new PlanejamentoAdapter(this.plans);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -43,8 +48,22 @@ public class PlanejamentosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlanejamentosActivity.this, NovoPlanejamentoActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, NOVO_PLANEJAMENTO);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == Activity.RESULT_OK && data != null) {
+            switch (requestCode) {
+                case NOVO_PLANEJAMENTO:
+                    plans.add((Planejamento) data.getParcelableExtra("novoPlanejamento"));
+                    adapter.notifyDataSetChanged();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
