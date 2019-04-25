@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -40,8 +41,17 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         Planejamento p = items.get(i);
         TextView itemAno = viewHolder.itemAno;
         TextView itemSemestre = viewHolder.itemSemestre;
+        TextView itemLinguas = viewHolder.itemLinguas;
+        TextView itemExatas = viewHolder.itemExatas;
+        TextView itemSaude = viewHolder.itemSaude;
+        TextView itemHumanidades = viewHolder.itemHumanidades;
+
         itemAno.setText(String.valueOf(p.getAno()));
         itemSemestre.setText(String.valueOf(p.getSemestre()));
+        itemLinguas.setText(String.valueOf(p.getLinguas()));
+        itemExatas.setText(String.valueOf(p.getExatas()));
+        itemSaude.setText(String.valueOf(p.getSaude()));
+        itemHumanidades.setText(String.valueOf(p.getHumanidades()));
     }
 
     @Override
@@ -50,13 +60,18 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemAno;
-        public TextView itemSemestre;
+        public TextView itemAno, itemSemestre, itemLinguas, itemExatas, itemSaude, itemHumanidades;
+
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             itemAno = itemView.findViewById(R.id.textAno);
             itemSemestre = itemView.findViewById(R.id.textSemestre);
+            itemLinguas = itemView.findViewById(R.id.textLinguas);
+            itemExatas = itemView.findViewById(R.id.textExatas);
+            itemSaude = itemView.findViewById(R.id.textSaude);
+            itemHumanidades = itemView.findViewById(R.id.textHumanidades);
+
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

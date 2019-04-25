@@ -1,25 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:collapseColumns="*"
+    android:stretchColumns="*"
+    android:id="@+id/tableLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="10dp"
-    android:paddingTop="20dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="20dp"
     android:background="?android:attr/selectableItemBackground">
 
 
-    <TextView
-        android:id="@+id/textAno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="textView"/>
+    <TableRow android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textSemestre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="textView"/>
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/textAno"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:text="ano"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textSemestre"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:text="sem"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textLinguas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Lin" />
+
+        <TextView
+            android:id="@+id/textExatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Exa" />
+
+        <TextView
+            android:id="@+id/textSaude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Sau" />
+
+        <TextView
+            android:id="@+id/textHumanidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hum" />
+
+    </TableRow>
+
+    <TableRow android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/textPer"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_span="2"
+            android:gravity="end"
+            android:padding="5dp"
+            android:text="Quanto cumpriu" />
+
+
+        <TextView
+            android:id="@+id/textLinguasP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Linp" />
+
+        <TextView
+            android:id="@+id/textExatasP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Exap" />
+
+        <TextView
+            android:id="@+id/textSaudeP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Saup" />
+
+        <TextView
+            android:id="@+id/textHumanidadesP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hump" />
+
+    </TableRow>
+
+
+</TableLayout>

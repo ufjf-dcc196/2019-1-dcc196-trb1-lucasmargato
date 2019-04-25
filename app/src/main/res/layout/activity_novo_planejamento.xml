@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_gravity="center"
+    tools:context=".NovoPlanejamentoActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/labelNovoTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Novo Planejamento"
+            android:textSize="36sp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/labelNovoAno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Ano:" />
+
+        <EditText
+            android:id="@+id/textNovoAno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:ems="12"
+            android:hint="Digite o ano"
+            android:padding="5dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/labelNovoSemestre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Semestre:" />
+
+        <EditText
+            android:layout_gravity="left|center"
+            android:id="@+id/textNovoSemestre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:ems="12"
+            android:hint="Digite o semestre" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/labelNovoLinguas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:padding="5dp"
+            android:text="Línguas:" />
+
+        <EditText
+            android:id="@+id/textNovoLinguas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:ems="12"
+            android:hint="Digite o percentual desejado"
+            android:padding="5dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/labelNovoExatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Exatas:" />
+
+        <EditText
+            android:layout_gravity="left|center"
+            android:id="@+id/textNovoExatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:ems="12"
+            android:hint="Digite o percentual desejado" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/labelNovoSaude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Saúde:" />
+
+        <EditText
+            android:layout_gravity="left|center"
+            android:id="@+id/textNovoSaude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:ems="12"
+            android:hint="Digite o percentual desejado" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/labelNovoHumanidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Humanidedes:" />
+
+        <EditText
+            android:layout_gravity="left|center"
+            android:id="@+id/textNovoHumanidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:ems="12"
+            android:hint="Digite o percentual desejado" />
+
+    </TableRow>
+
+</TableLayout>
