@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_gravity="center"
+    tools:context=".NovaDisciplinaCursadaActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textNovaDiscTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Nova Disciplina"
+            android:textSize="36sp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textNovaDiscNome"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center"
+            android:padding="5dp"
+            android:text="Nome:" />
+
+        <EditText
+            android:id="@+id/editNovaDiscNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:ems="12"
+            android:hint="Digite o nome"
+            android:padding="5dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textNovaDiscHoras"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center"
+            android:padding="5dp"
+            android:text="Horas:" />
+
+        <EditText
+            android:id="@+id/editNovaDiscHoras"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center"
+            android:ems="12"
+            android:hint="Digite o número de horas"
+            android:inputType="number"
+            android:padding="5dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_gravity="right|center"
+            android:id="@+id/textNovaDiscArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Area:" />
+
+        <Spinner
+            android:id="@+id/spinnerNovaDiscArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"/>
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/buttonNovaDiscConfirma"
+            android:text="Confirmar"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+</TableLayout>

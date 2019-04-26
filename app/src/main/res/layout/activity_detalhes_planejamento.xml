@@ -6,21 +6,21 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:layout_gravity="center"
-    tools:context=".NovoPlanejamentoActivity">
+    tools:context=".DetalhesPlanejamentoActivity">
 
     <TableRow
         android:layout_width="match_parent"
         android:gravity="center">
 
         <TextView
-            android:id="@+id/textNovoTitulo"
+            android:id="@+id/textDetTitulo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_span="2"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Novo Planejamento"
-            android:textSize="36sp" />
+            android:text="Detalhes do Planejamento"
+            android:textSize="28sp" />
 
 
     </TableRow>
@@ -31,14 +31,14 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/textNovoAno"
+            android:id="@+id/textDetAno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="Ano:" />
 
         <EditText
-            android:id="@+id/editNovoAno"
+            android:id="@+id/editDetAno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
@@ -55,7 +55,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/textNovoSemestre"
+            android:id="@+id/textDetSemestre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -63,7 +63,7 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/editNovoSemestre"
+            android:id="@+id/editDetSemestre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -78,7 +78,7 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/textNovoLinguas"
+            android:id="@+id/textDetLinguas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center"
@@ -86,7 +86,7 @@
             android:text="Línguas:" />
 
         <EditText
-            android:id="@+id/editNovoLinguas"
+            android:id="@+id/editDetLinguas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
@@ -103,7 +103,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/textNovoExatas"
+            android:id="@+id/textDetExatas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -111,7 +111,7 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/editNovoExatas"
+            android:id="@+id/editDetExatas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -127,7 +127,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/textNovoSaude"
+            android:id="@+id/textDetSaude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -135,7 +135,7 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/editNovoSaude"
+            android:id="@+id/editDetSaude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -151,7 +151,7 @@
 
         <TextView
             android:layout_gravity="right|center"
-            android:id="@+id/textNovoHumanidades"
+            android:id="@+id/textDetHumanidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -159,7 +159,7 @@
 
         <EditText
             android:layout_gravity="left|center"
-            android:id="@+id/editNovoHumanidades"
+            android:id="@+id/editDetHumanidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -175,12 +175,12 @@
         android:padding="10dp">
 
         <Button
-            android:id="@+id/buttonNovoConfirma"
-            android:text="Confirmar"
-            android:padding="5dp"
-            android:layout_marginTop="5dp"
+            android:id="@+id/buttonDetAtualiza"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Atualizar" />
 
     </TableRow>
 

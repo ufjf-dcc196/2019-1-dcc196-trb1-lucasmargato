@@ -64,6 +64,9 @@ public class Planejamento implements Parcelable {
         return this.disciplinas;
     }
     public void addDisciplina(Disciplina d) {
+        if (this.disciplinas == null) {
+            this.disciplinas = new ArrayList<Disciplina>();
+        }
         this.disciplinas.add(d);
     }
 

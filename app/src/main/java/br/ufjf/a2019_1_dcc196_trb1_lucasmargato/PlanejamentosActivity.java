@@ -18,9 +18,10 @@ import java.util.List;
 public class PlanejamentosActivity extends AppCompatActivity {
 
     public static final int NOVO_PLANEJAMENTO = 1;
+    public static final int DISCIPLINAS_CURSADAS = 2;
     PlanejamentoAdapter adapter;
 
-    public List<Planejamento> plans = new ArrayList<Planejamento>(){{
+    public List<Planejamento> plans = new ArrayList<Planejamento>() {{
         add(new Planejamento(2018, 1, 25, 25, 25, 25));
         add(new Planejamento(2018, 2, 40, 20, 20, 20));
     }};
@@ -35,7 +36,7 @@ public class PlanejamentosActivity extends AppCompatActivity {
         plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
 
 
-        adapter  = new PlanejamentoAdapter(this.plans);
+        adapter = new PlanejamentoAdapter(this.plans);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -44,8 +45,9 @@ public class PlanejamentosActivity extends AppCompatActivity {
             public void onItemClick(View itemView, int position) {
                 Intent intent = new Intent(PlanejamentosActivity.this, DisciplinasCursadasActivity.class);
                 intent.putExtra("plan", plans.get(position));
+                intent.putExtra("pos", position);
 
-                startActivity(intent);
+                startActivityForResult(intent, DISCIPLINAS_CURSADAS);
 
                 //Toast.makeText(PlanejamentosActivity.this, String.valueOf(plans.get(position).getAno()+" - "+plans.get(position).getSemestre()), Toast.LENGTH_SHORT).show();
             }
@@ -62,11 +64,20 @@ public class PlanejamentosActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (resultCode == Activity.RESULT_OK && data != null) {
+        if (data != null) {
             switch (requestCode) {
                 case NOVO_PLANEJAMENTO:
-                    plans.add((Planejamento) data.getParcelableExtra("novoPlanejamento"));
-                    adapter.notifyDataSetChanged();
+                    if (resultCode == Activity.RESULT_OK) {
+                        plans.add((Planejamento) data.getParcelableExtra("novoPlanejamento"));
+                        adapter.notifyDataSetChanged();
+                    }
+                    break;
+                case DISCIPLINAS_CURSADAS:
+                    int t = data.getIntExtra("pos", -1);
+                    if (t != -1) {
+                        plans.set(t, (Planejamento) data.getParcelableExtra("plan"));
+                        adapter.notifyDataSetChanged();
+                    }
                     break;
                 default:
                     break;
