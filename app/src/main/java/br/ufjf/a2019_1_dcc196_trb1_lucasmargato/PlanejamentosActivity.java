@@ -32,6 +32,8 @@ public class PlanejamentosActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rvPlanejamentos);
         Button btnNovo = findViewById(R.id.buttonNovo);
 
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+
 
         adapter  = new PlanejamentoAdapter(this.plans);
         rv.setAdapter(adapter);
@@ -40,7 +42,12 @@ public class PlanejamentosActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new PlanejamentoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
-                Toast.makeText(PlanejamentosActivity.this, String.valueOf(plans.get(position).getAno()+" - "+plans.get(position).getSemestre()), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(PlanejamentosActivity.this, DisciplinasCursadasActivity.class);
+                intent.putExtra("plan", plans.get(position));
+
+                startActivity(intent);
+
+                //Toast.makeText(PlanejamentosActivity.this, String.valueOf(plans.get(position).getAno()+" - "+plans.get(position).getSemestre()), Toast.LENGTH_SHORT).show();
             }
         });
 

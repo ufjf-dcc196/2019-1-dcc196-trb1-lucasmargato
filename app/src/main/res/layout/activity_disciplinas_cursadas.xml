@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlanejamentosActivity">
+    tools:context=".DisciplinasCursadasActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvPlanejamentos"
+        android:id="@+id/rvDisciplinas"
         android:layout_width="0dp"
         android:layout_height="500dp"
         android:layout_marginStart="8dp"
@@ -19,18 +19,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
-        android:id="@+id/buttonNovo"
+        android:id="@+id/buttonNovaDisciplina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Nova Disciplina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDetalhesPlanejamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="32dp"
-        android:text="Novo Planejamento"
+        android:text="Detalhes do Planejamento"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.ViewHolder> {
-    private final List<Planejamento> items;
-    private OnItemClickListener listener;
+public class DisciplinaAdapter  extends RecyclerView.Adapter<DisciplinaAdapter.ViewHolder> {
+    private final List<Disciplina> items;
+    private DisciplinaAdapter.OnItemClickListener listener;
 
-    public PlanejamentoAdapter(List<Planejamento> items) { this.items = items; }
+    public DisciplinaAdapter(List<Disciplina> items) { this.items = items; }
 
     public interface OnItemClickListener {
         void onItemClick(View itemView, int position);
@@ -28,28 +28,24 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View itemView = inflater.inflate(R.layout.layout_planejamento, viewGroup, false);
+        View itemView = inflater.inflate(R.layout.layout_disciplina, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Planejamento p = items.get(i);
-        TextView itemAno = viewHolder.itemAno;
-        TextView itemSemestre = viewHolder.itemSemestre;
-        TextView itemLinguas = viewHolder.itemLinguas;
-        TextView itemExatas = viewHolder.itemExatas;
-        TextView itemSaude = viewHolder.itemSaude;
-        TextView itemHumanidades = viewHolder.itemHumanidades;
+        Disciplina d = items.get(i);
+        TextView itemNome = viewHolder.itemNome;
+        TextView itemHoras  = viewHolder.itemHoras;
+        TextView itemArea = viewHolder.itemArea;
 
-        itemAno.setText(String.valueOf(p.getAno()));
-        itemSemestre.setText(String.valueOf(p.getSemestre()));
-        itemLinguas.setText(String.valueOf(p.getLinguas()));
-        itemExatas.setText(String.valueOf(p.getExatas()));
-        itemSaude.setText(String.valueOf(p.getSaude()));
-        itemHumanidades.setText(String.valueOf(p.getHumanidades()));
+
+        itemNome.setText(String.valueOf(d.getNome()));
+        itemHoras.setText(String.valueOf(d.getHoras()));
+        itemArea.setText(String.valueOf(d.getArea()));
     }
+
 
     @Override
     public int getItemCount() {
@@ -57,17 +53,14 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemAno, itemSemestre, itemLinguas, itemExatas, itemSaude, itemHumanidades;
+        public TextView itemNome, itemHoras, itemArea;
 
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
-            itemAno = itemView.findViewById(R.id.textAno);
-            itemSemestre = itemView.findViewById(R.id.textSemestre);
-            itemLinguas = itemView.findViewById(R.id.textLinguas);
-            itemExatas = itemView.findViewById(R.id.textExatas);
-            itemSaude = itemView.findViewById(R.id.textSaude);
-            itemHumanidades = itemView.findViewById(R.id.textHumanidades);
+            itemNome = itemView.findViewById(R.id.textDiscNome);
+            itemHoras = itemView.findViewById(R.id.textDiscHoras);
+            itemArea = itemView.findViewById(R.id.textDiscArea);
 
 
             itemView.setOnClickListener(new View.OnClickListener(){
@@ -91,7 +84,4 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             }
         }
     }
-
-
-
 }
