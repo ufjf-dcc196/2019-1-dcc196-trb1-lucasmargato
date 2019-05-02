@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NovoPlanejamentoActivity extends AppCompatActivity {
     @Override
@@ -24,19 +25,33 @@ public class NovoPlanejamentoActivity extends AppCompatActivity {
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent resultado = new Intent();
-                Planejamento p = new Planejamento(
-                        Integer.parseInt(ano.getText().toString()),
-                        Integer.parseInt(semestre.getText().toString()),
-                        Integer.parseInt(linguas.getText().toString()),
-                        Integer.parseInt(exatas.getText().toString()),
-                        Integer.parseInt(saude.getText().toString()),
-                        Integer.parseInt(humanidades.getText().toString())
-                );
+                int pano, psemestre;
+                float plinguas, pexatas, psaude, phumanidades;
 
-                resultado.putExtra("novoPlanejamento", p);
-                setResult(RESULT_OK, resultado);
-                finish();
+                pano = Integer.parseInt(ano.getText().toString());
+                psemestre = Integer.parseInt(semestre.getText().toString());
+                plinguas = Float.parseFloat(linguas.getText().toString());
+                pexatas = Float.parseFloat(exatas.getText().toString());
+                psaude = Float.parseFloat(saude.getText().toString());
+                phumanidades = Float.parseFloat(humanidades.getText().toString());
+
+                if (plinguas + pexatas + psaude + phumanidades != 100) {
+                    Toast.makeText(NovoPlanejamentoActivity.this, "O planejamento das áreas precisa somar 100% !!!", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent resultado = new Intent();
+                    Planejamento p = new Planejamento(
+                            pano,
+                            psemestre,
+                            plinguas,
+                            pexatas,
+                            psaude,
+                            phumanidades
+                    );
+
+                    resultado.putExtra("novoPlanejamento", p);
+                    setResult(RESULT_OK, resultado);
+                    finish();
+                }
             }
         });
     }

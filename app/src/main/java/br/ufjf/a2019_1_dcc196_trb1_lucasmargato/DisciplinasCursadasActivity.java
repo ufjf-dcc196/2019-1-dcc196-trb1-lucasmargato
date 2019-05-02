@@ -1,6 +1,8 @@
 package br.ufjf.a2019_1_dcc196_trb1_lucasmargato;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +24,8 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
     int pos;
     Intent resultado;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,8 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
             rv.setAdapter(adapter);
             rv.setLayoutManager(new LinearLayoutManager(this));
 
+
+
             if (p.getDisciplinas().isEmpty()) {
                 Toast.makeText(DisciplinasCursadasActivity.this, "Sem disciplinas", Toast.LENGTH_SHORT).show();
             }
@@ -52,6 +58,33 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
         }
 
 
+
+        adapter.setOnItemLongClickListener(new DisciplinaAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View itemView, final int position) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                p.getDisciplinas().remove(position);
+                                resultado.putExtra("plan", p);
+                                setResult(RESULT_CANCELED, resultado);
+                                adapter.notifyDataSetChanged();
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //No button clicked
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(DisciplinasCursadasActivity.this);
+                builder.setMessage("Remover a disciplina " + p.getDisciplina(position).getNome() + "?").setPositiveButton("Sim", dialogClickListener).setNegativeButton("Não", dialogClickListener).show();
+
+            }
+        });
 
         btnNovaDisciplina.setOnClickListener(new View.OnClickListener() {
             @Override

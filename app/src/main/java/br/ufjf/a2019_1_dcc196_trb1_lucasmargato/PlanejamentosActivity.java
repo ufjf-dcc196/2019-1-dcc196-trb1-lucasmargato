@@ -2,6 +2,8 @@ package br.ufjf.a2019_1_dcc196_trb1_lucasmargato;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -58,8 +60,6 @@ public class PlanejamentosActivity extends AppCompatActivity {
                 intent.putExtra("pos", position);
 
                 startActivityForResult(intent, DISCIPLINAS_CURSADAS);
-
-                //Toast.makeText(PlanejamentosActivity.this, String.valueOf(plans.get(position).getAno()+" - "+plans.get(position).getSemestre()), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -68,6 +68,32 @@ public class PlanejamentosActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PlanejamentosActivity.this, NovoPlanejamentoActivity.class);
                 startActivityForResult(intent, NOVO_PLANEJAMENTO);
+            }
+        });
+
+        adapter.setOnItemLongClickListener(new PlanejamentoAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View itemView, final int position) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                plans.remove(position);
+                                adapter.notifyDataSetChanged();
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //No button clicked
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(PlanejamentosActivity.this);
+                builder.setMessage("Remover o planejamento " + plans.get(position).getAno() + " - " + plans.get(position).getSemestre() + "?")
+                        .setPositiveButton("Sim", dialogClickListener).setNegativeButton("Não", dialogClickListener).show();
+
             }
         });
     }
