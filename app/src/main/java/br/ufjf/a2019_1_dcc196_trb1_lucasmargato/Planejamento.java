@@ -70,6 +70,31 @@ public class Planejamento implements Parcelable {
         this.disciplinas.add(d);
     }
 
+    public int totalLinguas() {
+        int t = 0;
+        for (Disciplina d:this.disciplinas) if (d.getArea() == Area.LINGUAS) { t+= d.getHoras(); }
+        return t;
+    }
+
+    public int totalExatas() {
+        int t = 0;
+        for (Disciplina d:this.disciplinas) if (d.getArea() == Area.EXATAS) { t+= d.getHoras(); }
+        return t;
+    }
+
+    public int totalSaude() {
+        int t = 0;
+        for (Disciplina d:this.disciplinas) if (d.getArea() == Area.SAUDE) { t+= d.getHoras(); }
+        return t;
+    }
+
+    public int totalHumanidades() {
+        int t = 0;
+        for (Disciplina d:this.disciplinas) if (d.getArea() == Area.HUMANIDADES) { t+= d.getHoras(); }
+        return t;
+    }
+
+
     @Override
     public int describeContents() {
         return 0;

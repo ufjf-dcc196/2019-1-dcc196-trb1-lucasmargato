@@ -14,6 +14,10 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     private final List<Planejamento> items;
     private OnItemClickListener listener;
 
+    private static final int RED = 0xFFAA0000;
+    private static final int YELLOW = 0xFFAAAA00;
+    private static final int GREEN = 0xFF00AA00;
+
     public PlanejamentoAdapter(List<Planejamento> items) { this.items = items; }
 
     public interface OnItemClickListener {
@@ -41,12 +45,128 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         TextView itemExatas = viewHolder.itemExatas;
         TextView itemSaude = viewHolder.itemSaude;
         TextView itemHumanidades = viewHolder.itemHumanidades;
+        TextView itemLinguasP = viewHolder.itemLinguasP;
+        TextView itemExatasP = viewHolder.itemExatasP;
+        TextView itemSaudeP = viewHolder.itemSaudeP;
+        TextView itemHumanidadesP = viewHolder.itemHumanidadesP;
+
+        int tl, te, ts, th, total, rl, re, rs, rh;
+        tl = p.totalLinguas();
+        te = p.totalExatas();
+        ts = p.totalSaude();
+        th = p.totalHumanidades();
+        total = tl + te + ts + th;
+
+        float pl, pe, ps, ph;
+        if (tl == 0) {
+            pl = 0;
+        } else {
+            pl = ((float) tl / (float) total) * 100;
+        }
+
+        if (te == 0) {
+            pe = 0;
+        } else {
+            pe = ((float) te / (float) total) * 100;
+        }
+
+        if (ts == 0) {
+            ps = 0;
+        } else {
+            ps = ((float) ts / (float) total) * 100;
+        }
+
+        if (th == 0) {
+            ph = 0;
+        } else {
+            ph = ((float) th / (float) total) * 100;
+        }
+
+        rl = Math.round(pl-p.getLinguas());
+        re = Math.round(pe-p.getExatas());
+        rs = Math.round(ps-p.getSaude());
+        rh = Math.round(ph-p.getHumanidades());
 
         itemAnoSem.setText(String.valueOf(p.getAno()) + " - " + String.valueOf(p.getSemestre()));
-        itemLinguas.setText(String.valueOf(p.getLinguas()));
-        itemExatas.setText(String.valueOf(p.getExatas()));
-        itemSaude.setText(String.valueOf(p.getSaude()));
-        itemHumanidades.setText(String.valueOf(p.getHumanidades()));
+        itemLinguas.setText(String.valueOf(p.getLinguas()) + "%");
+        itemExatas.setText(String.valueOf(p.getExatas()) + "%");
+        itemSaude.setText(String.valueOf(p.getSaude()) + "%");
+        itemHumanidades.setText(String.valueOf(p.getHumanidades()) + "%");
+
+        String txt;
+
+        txt = tl + "h (";
+        if (rl>0) {
+            txt += "+" + rl + "%)";
+        } else if (rl<0) {
+            txt += rl + "%)";
+        } else {
+            txt += "OK)";
+        }
+
+        if (Math.abs(rl) > 20) {
+            itemLinguasP.setTextColor(RED);
+        } else if (Math.abs(rl) > 10) {
+            itemLinguasP.setTextColor(YELLOW);
+        } else {
+            itemLinguasP.setTextColor(GREEN);
+        }
+        itemLinguasP.setText(txt);
+
+        txt = te + "h (";
+        if (re>0) {
+            txt += "+" + re + "%)";
+        } else if (re<0) {
+            txt += re + "%)";
+        } else {
+            txt += "OK)";
+        }
+
+        if (Math.abs(re) > 20) {
+            itemExatasP.setTextColor(RED);
+        } else if (Math.abs(re) > 10) {
+            itemExatasP.setTextColor(YELLOW);
+        } else {
+            itemExatasP.setTextColor(GREEN);
+        }
+        itemExatasP.setText(txt);
+
+        txt = ts + "h (";
+        if (rs>0) {
+            txt += "+" + rs + "%)";
+        } else if (rs<0) {
+            txt += rs + "%)";
+        } else {
+            txt += "OK)";
+        }
+
+        if (Math.abs(rs) > 20) {
+            itemSaudeP.setTextColor(RED);
+        } else if (Math.abs(rs) > 10) {
+            itemSaudeP.setTextColor(YELLOW);
+        } else {
+            itemSaudeP.setTextColor(GREEN);
+        }
+        itemSaudeP.setText(txt);
+
+        txt = th + "h (";
+        if (rh>0) {
+            txt += "+" + rh + "%)";
+        } else if (rh<0) {
+            txt += rh + "%)";
+        } else {
+            txt += "OK)";
+        }
+
+        if (Math.abs(rh) > 20) {
+            itemHumanidadesP.setTextColor(RED);
+        } else if (Math.abs(rh) > 10) {
+            itemHumanidadesP.setTextColor(YELLOW);
+        } else {
+            itemHumanidadesP.setTextColor(GREEN);
+        }
+        itemHumanidadesP.setText(txt);
+
     }
 
     @Override
@@ -55,7 +175,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemAnoSem, itemLinguas, itemExatas, itemSaude, itemHumanidades;
+        public TextView itemAnoSem, itemLinguas, itemExatas, itemSaude, itemHumanidades, itemLinguasP, itemExatasP, itemSaudeP, itemHumanidadesP;
 
 
         public ViewHolder(@NonNull final View itemView) {
@@ -66,6 +186,10 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             itemSaude = itemView.findViewById(R.id.textSaude);
             itemHumanidades = itemView.findViewById(R.id.textHumanidades);
 
+            itemLinguasP = itemView.findViewById(R.id.textLinguasP);
+            itemExatasP = itemView.findViewById(R.id.textExatasP);
+            itemSaudeP = itemView.findViewById(R.id.textSaudeP);
+            itemHumanidadesP = itemView.findViewById(R.id.textHumanidadesP);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
