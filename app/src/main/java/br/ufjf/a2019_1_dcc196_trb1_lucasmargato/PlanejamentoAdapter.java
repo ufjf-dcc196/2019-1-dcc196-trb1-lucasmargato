@@ -36,15 +36,13 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Planejamento p = items.get(i);
-        TextView itemAno = viewHolder.itemAno;
-        TextView itemSemestre = viewHolder.itemSemestre;
+        TextView itemAnoSem = viewHolder.itemAnoSem;
         TextView itemLinguas = viewHolder.itemLinguas;
         TextView itemExatas = viewHolder.itemExatas;
         TextView itemSaude = viewHolder.itemSaude;
         TextView itemHumanidades = viewHolder.itemHumanidades;
 
-        itemAno.setText(String.valueOf(p.getAno()));
-        itemSemestre.setText(String.valueOf(p.getSemestre()));
+        itemAnoSem.setText(String.valueOf(p.getAno()) + " - " + String.valueOf(p.getSemestre()));
         itemLinguas.setText(String.valueOf(p.getLinguas()));
         itemExatas.setText(String.valueOf(p.getExatas()));
         itemSaude.setText(String.valueOf(p.getSaude()));
@@ -57,13 +55,12 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView itemAno, itemSemestre, itemLinguas, itemExatas, itemSaude, itemHumanidades;
+        public TextView itemAnoSem, itemLinguas, itemExatas, itemSaude, itemHumanidades;
 
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
-            itemAno = itemView.findViewById(R.id.textAno);
-            itemSemestre = itemView.findViewById(R.id.textSemestre);
+            itemAnoSem = itemView.findViewById(R.id.textAnoSem);
             itemLinguas = itemView.findViewById(R.id.textLinguas);
             itemExatas = itemView.findViewById(R.id.textExatas);
             itemSaude = itemView.findViewById(R.id.textSaude);

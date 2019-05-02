@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:collapseColumns="*"
     android:stretchColumns="*"
     android:id="@+id/tableLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground">
+    android:background="#AAAAAA">
 
 
     <TableRow android:gravity="center"
@@ -14,20 +15,14 @@
 
 
         <TextView
-            android:id="@+id/textAno"
+            android:id="@+id/textAnoSem"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:padding="5dp"
-            android:text="ano"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textSemestre"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:padding="5dp"
-            android:text="sem"
-            android:textSize="18sp" />
+            android:layout_span="2"
+            android:text="ano-sem"
+            android:textSize="18sp"
+            android:background="#AAAAAA"/>
 
         <TextView
             android:id="@+id/textLinguas"
@@ -71,7 +66,7 @@
             android:layout_span="2"
             android:gravity="end"
             android:padding="5dp"
-            android:text="Quanto cumpriu" />
+            android:text="Cumpriu:" />
 
 
         <TextView

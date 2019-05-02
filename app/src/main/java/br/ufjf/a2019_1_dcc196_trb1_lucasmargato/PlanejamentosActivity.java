@@ -24,6 +24,18 @@ public class PlanejamentosActivity extends AppCompatActivity {
     public List<Planejamento> plans = new ArrayList<Planejamento>() {{
         add(new Planejamento(2018, 1, 25, 25, 25, 25));
         add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
+        add(new Planejamento(2018, 2, 40, 20, 20, 20));
     }};
 
     @Override
@@ -33,6 +45,26 @@ public class PlanejamentosActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rvPlanejamentos);
         Button btnNovo = findViewById(R.id.buttonNovo);
 
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
+        plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
         plans.get(0).addDisciplina(new Disciplina("Portuga", 30, Area.LINGUAS));
 
 
