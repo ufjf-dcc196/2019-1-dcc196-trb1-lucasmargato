@@ -70,7 +70,7 @@ public class DisciplinasCursadasActivity extends AppCompatActivity {
                                 p.getDisciplinas().remove(position);
                                 resultado.putExtra("plan", p);
                                 setResult(RESULT_CANCELED, resultado);
-                                adapter.notifyDataSetChanged();
+                                adapter.notifyItemRemoved(position);
                                 break;
 
                             case DialogInterface.BUTTON_NEGATIVE:

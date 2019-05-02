@@ -80,7 +80,7 @@ public class PlanejamentosActivity extends AppCompatActivity {
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
                                 plans.remove(position);
-                                adapter.notifyDataSetChanged();
+                                adapter.notifyItemRemoved(position);
                                 break;
 
                             case DialogInterface.BUTTON_NEGATIVE:
